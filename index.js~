@@ -2,6 +2,26 @@ window.onload = function() {
     console.log("js loaded");
 };
 
+function startMonteCarlo() {
+    var canvas = document.getElementById('graph');
+    var height = canvas.height;
+    var width = canvas.width;
+
+    var x = getRandomInt(500);
+    var y = getRandomInt(500);
+
+    drawCoordinates(x, y)
+}
+
+$("#start").click(function() {
+	startMonteCarlo();
+});
+
+function getRandomInt(max) {
+    return Math.floor(Math.random() * Math.floor(max));
+}
+
+
 
 function drawCoordinates(x,y){
     var pointSize = 3; // Change according to the size of the point.

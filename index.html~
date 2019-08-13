@@ -17,6 +17,7 @@
       <h1>Monte Carlo Simulation</h1>
       <canvas id="graph" width="500" height="500" style="border:1px solid #000000;">
       </canvas>
+      <button>Start Monte Carlo</button>
     </div>
     <script src="index.js"></script>
   </body>
