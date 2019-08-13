@@ -2,20 +2,25 @@ window.onload = function() {
     console.log("js loaded");
 };
 
+var red = 0;
+var blue = 0;
+
 function startMonteCarlo() {
     var diameter = getDiameter();
     var height = diameter;
     var width = diameter;
 
-
-
-    for (var i =0; i< 100; i++)
-    {
+    var i = 0, howManyTimes = 10000;
+    function f() {
         var x = getRandomInt(width);
         var y = getRandomInt(height);
         drawCoordinates(x, y);
+        i++;
+        if( i < howManyTimes ){
+            setTimeout( f, 30 );
+        }
     }
-
+    f();
 }
 
 $("#start").click(function() {
@@ -62,9 +67,11 @@ function drawCoordinates(x,y){
 
     if (distance > radius) {
         ctx.fillStyle = "#ff2626"; // Red color  
+        red++;
     }
     else {
         ctx.fillStyle = '#33B2FF';
+        blue++;
     }
 
 
