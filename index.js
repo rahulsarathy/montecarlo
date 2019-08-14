@@ -4,20 +4,27 @@ window.onload = function() {
 
 var red = 0;
 var blue = 0;
+ratio = 1;
 
 function startMonteCarlo() {
     var diameter = getDiameter();
     var height = diameter;
     var width = diameter;
 
-    var i = 0, howManyTimes = 10000;
+    var i = 0, howManyTimes = 100000;
     function f() {
         var x = getRandomInt(width);
         var y = getRandomInt(height);
         drawCoordinates(x, y);
         i++;
+        var redtitle = document.getElementById('rednum');
+        redtitle.innerHTML = red;
+        var bluetitle = document.getElementById('bluenum');
+        bluetitle.innerHTML = blue;
+        var ratiotitle = document.getElementById('rationum');
+        ratiotitle.innerHTML = 4 * (blue / (red + blue));        
         if( i < howManyTimes ){
-            setTimeout( f, 30 );
+            setTimeout( f, 0 );
         }
     }
     f();
